@@ -1,10 +1,3 @@
-<?php
- exec("ls login.php|awk 'NR==1'|awk -F '.' '{print $1}'",$clo);
-  if ($clo[0]) {
-include 'header.php';
-ceklogin();
-  };
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -128,7 +121,6 @@ if ( window.history.replaceState ) {
 </script>
 <body style="text-align:center">
 <center>
-<a href="login.php" onClick="logout()">
 <img src="img/image.png" width: 80%></a>
 </center>
        <form method="post">
@@ -139,7 +131,7 @@ if ( window.history.replaceState ) {
         value="Log"/>
 <input type="submit" name="button2" class="btn third" id="config"
         value="Config"/>
-<input type="submit" name="button4" class="btn third" id"update"
+<input type="submit" name="button4" class="btn third" id="update"
         value="Update"/>
 </td></tr></center>
 </table>
