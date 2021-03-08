@@ -1,3 +1,6 @@
 #!/bin/bash
-wget -O /www/xderm/xderm-mini https://raw.githubusercontent.com/andrygibhq/xdermargon/main/xderm-mini -q
-wget -O /www/xderm/index.php https://raw.githubusercontent.com/andrygibhq/xdermargon/main/index.php -q
+#!/bin/bash
+wget -O /www/xderm/img/fav.ico https://github.com/andrygibhq/xdermrosy/raw/main/fav.ico
+wget -O /www/xderm/img/image.png https://github.com/andrygibhq/xdermrosy/raw/main/image.png
+wget -O /www/xderm/xderm-mini https://raw.githubusercontent.com/andrygibhq/xdermrosy/main/xderm-mini -q
+wget -O /www/xderm/index.php https://raw.githubusercontent.com/andrygibhq/xdermrosy/main/index.php -q
