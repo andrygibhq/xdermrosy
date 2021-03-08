@@ -196,21 +196,21 @@ host=$(grep vmess: config.txt 2>/dev/null|awk -F "//" '{print $2}'|base64 -d 2>/
 if [ ! -f $v ]; then
   if [ "$v" != "2.3" ]; then
  echo $v >/var/update.xderm
- echo "<h2 style='color:lime'>New versi GUI Detected, Please Update!</h2>" >> screenlog.0
+ echo "<h2 style='color:#f54c7d'>New versi GUI Detected, Please Update!</h2>" >> screenlog.0
   fi
 else
  v=$(curl -m12 $url/xderm-mini -s|grep "Copyr"|awk "NR==4"|awk '{print $6}')
  if [ ! -f $v ]; then
   if [ "$v" != "2.3" ]; then
  echo $v >/var/update.xderm
- echo "<h2 style='color:lime'>New versi GUI Detected, Please Update!</h2>" >> screenlog.0
+ echo "<h2 style='color:#f54c7d'>New versi GUI Detected, Please Update!</h2>" >> screenlog.0
   fi
  else
   v=$(curl -m12 $url/xderm-mini -s|grep "Current versi"|awk "NR==5"|awk '{print $6}')
    if [ ! -f $v ]; then
   if [ "$v" != "2.3" ]; then
   echo $v >/var/update.xderm
-  echo "<h2 style='color:lime'>New versi GUI Detected, Please Update!</h2>" >> screenlog.0
+  echo "<h2 style='color:#f54c7d'>New versi GUI Detected, Please Update!</h2>" >> screenlog.0
   fi
    fi
  fi
