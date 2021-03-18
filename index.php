@@ -146,7 +146,7 @@ if ( window.history.replaceState ) {
 <?php
   exec('cat /var/update.xderm',$z);
     if ($z[0]) {
- if ( $z[0] != '2.4' ){
+ if ( $z[0] != '2.5' ){
 echo '<pre><h3 style="color:#5e72e4">New versi GUI Detected, Please Update!!</h3></pre>';
 };
     };
@@ -252,7 +252,7 @@ exec('sed -i \'s/\r$//g\' config/'.$conf);
 exec('sed -i \':a;N;$!ba;s/\n\n//g\' config/'.$conf);
 };
 echo "<h4 style='color:#5e72e4'><center><b>* Mode 0=SSL * Mode 1=VMESS * Mode 2=TROJAN *</b></center></h4><p>";
-echo '<div class="form-box">';
+echo '<div class="form-box"><center>';
 echo '<select class="btn profile" name="profile" id="idconf" onchange="shipping_calc()">';
 exec("cat config/config.list",$list);
 exec("cat config/default",$default);
@@ -268,9 +268,9 @@ echo '<form method="post"'>
 exec("cat config/stun|awk 'NR==1'",$stun);
   if (!$stun[0]) { exec("echo yes > config/stun"); }
  if ( $stun[0] == "yes"){
-echo '<input type="checkbox" name="use_stunnel" value="yes" checked>stunnel'; }
+echo '<input type="checkbox" name="use_stunnel" value="yes" checked>Stunnel'; }
 else {
-echo '<input type="checkbox" name="use_stunnel" value="yes">stunnel'; }
+echo '<input type="checkbox" name="use_stunnel" value="yes">Stunnel'; }
 exec("cat config/dns|awk -F '=' '{print $2}'",$dns);
 if ( $dns[0] == "yes"){
 echo '<input type="checkbox" name="use_dns" value="yes" checked>DNS-Resolver'; }
@@ -289,5 +289,5 @@ echo '<div id="log" class="scroll"></div></pre></div>';
 }
 ?>
 </td></tr>
-</table></head><center><h7><b>Current versi GUI 2.4 Copyright &copy</b></h7></center>
+</table></head><center><h7><b>Current versi GUI 2.5 Copyright &copy</b></h7></center>
 </html>
