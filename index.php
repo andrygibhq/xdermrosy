@@ -1,3 +1,10 @@
+<?php
+ exec("ls login.php|awk 'NR==1'|awk -F '.' '{print $1}'",$clo);
+  if ($clo[0]) {
+include 'header.php';
+ceklogin();
+  };
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -139,8 +146,8 @@ if ( window.history.replaceState ) {
 <?php
   exec('cat /var/update.xderm',$z);
     if ($z[0]) {
- if ( $z[0] != '2.3' ){
-echo '<pre><h3 style="color:#f54c7d">New versi GUI Detected, Please Update!!</h3></pre>';
+ if ( $z[0] != '2.4' ){
+echo '<pre><h3 style="color:#5e72e4">New versi GUI Detected, Please Update!!</h3></pre>';
 };
     };
   if (isset($_POST['button1'])) {
@@ -210,8 +217,7 @@ if ($ada) {
 exec("cat config/default",$default);
 $default=$default[0];
  if ($default) {
-echo '<div class="textarea"><center>';
-echo "<h4><center><b>profile that is active now: $default</b></center></h4><p>";
+echo "<h4><center><b>profile that is active now: $default</b></center></h4>";
 $data = file_get_contents("config/$default");
 echo "<textarea class='text' name='configbox' id='isi' placeholder='Masukkan config disini' rows='15' cols='50'>$data</textarea>";
  } else {
@@ -245,8 +251,8 @@ exec('echo "'.$config.'" > config/'.$conf);
 exec('sed -i \'s/\r$//g\' config/'.$conf);
 exec('sed -i \':a;N;$!ba;s/\n\n//g\' config/'.$conf);
 };
-echo "<h4 style='color:#f54c7d'><center><b>* Mode 0=SSL * Mode 1=VMESS * Mode 2=TROJAN *</b></center></h4><p>";
-echo '<div class="form-box"><center>';
+echo "<h4 style='color:#5e72e4'><center><b>* Mode 0=SSL * Mode 1=VMESS * Mode 2=TROJAN *</b></center></h4><p>";
+echo '<div class="form-box">';
 echo '<select class="btn profile" name="profile" id="idconf" onchange="shipping_calc()">';
 exec("cat config/config.list",$list);
 exec("cat config/default",$default);
@@ -262,9 +268,9 @@ echo '<form method="post"'>
 exec("cat config/stun|awk 'NR==1'",$stun);
   if (!$stun[0]) { exec("echo yes > config/stun"); }
  if ( $stun[0] == "yes"){
-echo '<input type="checkbox" name="use_stunnel" value="yes" checked>Stunnel'; }
+echo '<input type="checkbox" name="use_stunnel" value="yes" checked>stunnel'; }
 else {
-echo '<input type="checkbox" name="use_stunnel" value="yes">Stunnel'; }
+echo '<input type="checkbox" name="use_stunnel" value="yes">stunnel'; }
 exec("cat config/dns|awk -F '=' '{print $2}'",$dns);
 if ( $dns[0] == "yes"){
 echo '<input type="checkbox" name="use_dns" value="yes" checked>DNS-Resolver'; }
@@ -283,5 +289,5 @@ echo '<div id="log" class="scroll"></div></pre></div>';
 }
 ?>
 </td></tr>
-</table></head><center><h7><b>Current versi GUI 2.3 Copyright &copy</b></h7></center>
+</table></head><center><h7><b>Current versi GUI 2.4 Copyright &copy</b></h7></center>
 </html>
