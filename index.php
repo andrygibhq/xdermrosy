@@ -146,7 +146,7 @@ if ( window.history.replaceState ) {
 <?php
   exec('cat /var/update.xderm',$z);
     if ($z[0]) {
- if ( $z[0] != '2.5' ){
+ if ( $z[0] != '2.6' ){
 echo '<pre><h3 style="color:#5e72e4">New versi GUI Detected, Please Update!!</h3></pre>';
 };
     };
@@ -244,7 +244,7 @@ exec("echo config4 >> config/config.list");
 exec("echo config5 >> config/config.list");
 exec("echo config1 >> config/default");
 $data = file_get_contents("config.txt");
-echo "<textarea name='configbox' id='isi' rows='15' cols='60'>$data</textarea>";
+echo "<textarea name='configbox' id='isi' rows='9' cols='50'>$data</textarea>";
 $config=$_POST['configbox'];
 $conf=$_POST['profile'];
 exec('echo "'.$config.'" > config/'.$conf);
@@ -283,11 +283,11 @@ exec("cat /etc/rc.local 2>/dev/null|grep xderm|grep button|awk '{print $2}'|awk 
 echo '<input type="checkbox" name="use_boot" value="yes" checked>ON-Boot'; }
 else {
 echo '<input type="checkbox" name="use_boot" value="yes">ON-Boot'; }
-echo '<input type="submit" name="simpan" class="btn profile" value="Simpan"/></form></div>';
+echo '<input type="submit" name="simpan" class="btn profile" value="Save"/></form></div>';
 } else {
 echo '<div id="log" class="scroll"></div></pre></div>';
 }
 ?>
 </td></tr>
-</table></head><center><h7><b>Current versi GUI 2.5 Copyright &copy</b></h7></center>
+</table></head><center><h7><b>Current versi GUI 2.6 Copyright &copy</b></h7></center>
 </html>
